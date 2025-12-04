@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class SistemLostFound {
 
-    // --- STRUKTUR DATA (NESTED CLASS) ---
+    // Struktur
     // Menggabungkan atribut Lost Information & Found Information
     static class ItemBarang {
         String kodeBarang;      // Nomor referensi
@@ -38,16 +38,16 @@ public class SistemLostFound {
     static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
-        // Data Dummy (Contoh Awal)
-        dataBarang.add(new ItemBarang("REF001", "Laptop Asus", "Hitam, Lecet dikit", "Lab Jarkom", "25-11-2024", "Staf Budi", "DITEMUKAN"));
-        dataBarang.add(new ItemBarang("REF002", "Tumblr Corkcicle", "Warna Pink", "Kantin Fasilkom", "24-11-2024", "Mawar (Mhs)", "KEHILANGAN"));
-        dataBarang.add(new ItemBarang("REF003", "Kunci Motor", "Gantungan Doraemon", "Parkiran", "26-11-2024", "Staf Asep", "DITEMUKAN"));
+        // Data Contoh (Contoh Awal)
+        dataBarang.add(new ItemBarang("REG001", "Laptop Asus", "Hitam, Lecet dikit", "Lab Dasar", "25-11-2024", "Akbar (Mhs)", "DITEMUKAN"));
+        dataBarang.add(new ItemBarang("REG002", "Casan Type C", "Warna Putih", "TU Fasilkom", "24-11-2024", "Balqis (Mhs)", "KEHILANGAN"));
+        dataBarang.add(new ItemBarang("REG003", "Kunci Motor", "Gantungan Doraemon", "Ruang 80", "26-11-2024", "Ray (Asisten Lab)", "DITEMUKAN"));
 
         boolean running = true;
         while (running) {
-            System.out.println("\n=======================================================");
+            System.out.println("\n==================================================");
             System.out.println("   SISTEM LOST & FOUND FASILKOM UNSIKA (INTEGRATED)");
-            System.out.println("=======================================================");
+            System.out.println("====================================================");
             System.out.println("1. Lapor Kehilangan Barang (Lost Information)");
             System.out.println("2. Catat Penemuan Barang (Found Information)");
             System.out.println("3. Lihat Semua Data (Quick Sort by Name)");
@@ -81,7 +81,7 @@ public class SistemLostFound {
         System.out.print("Tanggal & Waktu (DD-MM-YYYY)   : ");
         String tgl = input.nextLine();
         
-        String kontakLabel = (tipe.equals("KEHILANGAN")) ? "Data Pelapor (Nama/NPM)" : "Nama Staf Penemu";
+        String kontakLabel = (tipe.equals("KEHILANGAN")) ? "Data Pelapor (Nama)" : "Nama Penemu";
         System.out.print(kontakLabel + "        : ");
         String kontak = input.nextLine();
 
@@ -100,10 +100,10 @@ public class SistemLostFound {
 
         System.out.println("\nDATA BARANG TERURUT (A-Z):");
         for (ItemBarang b : dataBarang) {
-            System.out.println("-------------------------------------------------------");
+            System.out.println("------------------------------------------");
             System.out.println(b.toString());
         }
-        System.out.println("-------------------------------------------------------");
+        System.out.println("---------------------------------------------");
     }
 
     static void quickSort(ArrayList<ItemBarang> arr, int low, int high) {
